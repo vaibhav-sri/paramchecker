@@ -1,5 +1,5 @@
 #include <vector>
-#include <cstdlib>
+#include <cmath>
 
 enum VITAL_ID {
   bpm,
