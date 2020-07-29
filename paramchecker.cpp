@@ -13,7 +13,7 @@ std::vector<bool> vitalsAreOk(const std::vector<Measurement>& measurements) {
   std::vector<bool> results;
   for(auto t = measurements.begin(); t != measurements.end(); t++) {
     bool vitalResult = vitalCheckers[t->id]->measurementIsOk(t->measured_value);
-    std::cout << "Result is " << vitalResult << std::endl;
+    std::cout << "Vital-check result is " << vitalResult << std::endl;
   }
   return results;
 }
