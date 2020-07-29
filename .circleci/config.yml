@@ -41,4 +41,4 @@ jobs:
           command: 'lizard --CCN 3'
       - run:
           name: Unit test
-          command: './testcheck'
+          command: './testchecker'
