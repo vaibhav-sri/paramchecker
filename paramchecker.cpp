@@ -1,5 +1,6 @@
 #include "paramchecker.h"
 #include <vector>
+#include <iostream>
 
 IVitalCheck* vitalCheckers[] = {
   [bpm] = new VitalRangeCheck(70, 150),
@@ -11,7 +12,8 @@ IVitalCheck* vitalCheckers[] = {
 std::vector<bool> vitalsAreOk(const std::vector<Measurement>& measurements) {
   std::vector<bool> results;
   for(auto t = measurements.begin(); t != measurements.end(); t++) {
-    results.push_back(vitalCheckers[t->id]->measurementIsOk(t->measured_value));
+    bool vitalResult = vitalCheckers[t->id]->measurementIsOk(t->measured_value);
+    std::cout << "Result is " << vitalResult << std::endl;
   }
   return results;
 }
